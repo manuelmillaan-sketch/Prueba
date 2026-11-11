@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+
+        int secreto = random.nextInt(100) + 1;
+        int intento = 0;
+
+        System.out.println("Adivina un número del 1 al 100");
+
+        while (intento != secreto) {
+            System.out.print("Tu número: ");
+            intento = sc.nextInt();
+
+            if (intento < secreto) {
+                System.out.println("Más alto");
+            } else if (intento > secreto) {
+                System.out.println("Más bajo");
+            } else {
+                System.out.println("¡Has ganado!");
+            }
+        }
+
+        sc.close();
+    }
+}
